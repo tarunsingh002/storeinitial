@@ -147,4 +147,9 @@ public class ProductService {
         } else return null;
 
     }
+
+    public String addProducts(List<Product> products) {
+        products.forEach(p -> repository.save(p));
+        return "All products added";
+    }
 }

@@ -28,6 +28,11 @@ public class ProductController {
         return service.addProduct(product);
     }
 
+    @PostMapping("/api/v1/admin/addproducts")
+    public String addProduct(@RequestBody List<Product> products) {
+        return service.addProducts(products);
+    }
+
     @PutMapping("/api/v1/admin/updateproduct/{id}")
     public Product updateProduct(@RequestBody Product product,
                                  @PathVariable int id) {
